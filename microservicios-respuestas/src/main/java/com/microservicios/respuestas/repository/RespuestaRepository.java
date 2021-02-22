@@ -1,0 +1,15 @@
+package com.microservicios.respuestas.repository;
+
+import com.microservicios.respuestas.entity.Respuesta;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+public interface RespuestaRepository extends CrudRepository<Respuesta, Long> {
+
+    @Query("select r from Respuesta r  join fetch r.pregunta p join fetch p.examen e where r.alumnoId=?1 and e.id=?2")
+    Iterable<Respuesta> findRespByAlumByExam(Long alumnoId, Long examenId);
+
+    @Query("select e.id from Respuesta r join r.pregunta p join p.examen e where r.alumnoId=?1 group by e.id")
+    Iterable<Long> findExamenesIdsConRespuestasByAlumno(Long alumnoId);
+
+}
