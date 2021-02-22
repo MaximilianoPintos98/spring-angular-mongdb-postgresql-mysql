@@ -10,10 +10,16 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 public class ExamenController extends CommonsController<Examen, ExamenService> {
+
+    @GetMapping("/respondidos-por-preguntas")
+    public ResponseEntity<?> obtenerExamenesIdsPorPreguntasIdRespondidas(@RequestParam List<Long> preguntasIds){
+        return ResponseEntity.ok().body(service.findExamenesIdsConRespuestasByPreguntasIds(preguntasIds));
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> editar(@Valid @RequestBody Examen examen, BindingResult result, @PathVariable Long id){

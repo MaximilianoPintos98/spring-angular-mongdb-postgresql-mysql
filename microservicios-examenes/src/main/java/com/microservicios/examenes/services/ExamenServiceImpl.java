@@ -29,5 +29,11 @@ public class ExamenServiceImpl extends CommonsServiceImpl<Examen, ExamenReposito
         return asignaturaRepository.findAll();
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Iterable<Long> findExamenesIdsConRespuestasByPreguntasIds(Iterable<Long> preguntasIds) {
+        return repository.findExamenesIdsConRespuestasByPreguntasIds(preguntasIds);
+    }
+
 
 }
