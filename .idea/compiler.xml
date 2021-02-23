@@ -12,6 +12,7 @@
         <module name="microservicios-usuarios" />
         <module name="commons-examenes" />
         <module name="microservicios-examenes" />
+        <module name="eureka" />
         <module name="microservicios-cursos" />
         <module name="commons-microservicios" />
         <module name="microservicios-zuul" />
@@ -22,6 +23,7 @@
       <module name="commons-alumnos" target="11" />
       <module name="commons-examenes" target="12" />
       <module name="commons-microservicios" target="12" />
+      <module name="eureka" target="12" />
       <module name="microservicios-cursos" target="12" />
       <module name="microservicios-eureka" target="12" />
       <module name="microservicios-examenes" target="12" />
@@ -36,6 +38,7 @@
       <module name="commons-alumnos" options="-parameters" />
       <module name="commons-examenes" options="-parameters" />
       <module name="commons-microservicios" options="-parameters" />
+      <module name="eureka" options="-parameters" />
       <module name="microservicios-cursos" options="-parameters" />
       <module name="microservicios-eureka" options="-parameters" />
       <module name="microservicios-examenes" options="-parameters" />
