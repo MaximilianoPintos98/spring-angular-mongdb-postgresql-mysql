@@ -5,6 +5,8 @@ import com.formacionbdi.microservicios.app.usuarios.models.repository.AlumnoRepo
 import com.microservicios.commons.alumnos.entity.Alumno;
 import com.microservicios.commons.services.CommonsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,4 +43,15 @@ public class AlumnoServiceImpl extends CommonsServiceImpl<Alumno, AlumnoReposito
         this.eliminarCursoAlumnoPorId(id);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Iterable<Alumno> findAll() {
+        return repository.findAllByOrderByIdAsc();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<Alumno> findAll(Pageable pageable) {
+        return repository.findAllByOrderByIdAsc(pageable);
+    }
 }

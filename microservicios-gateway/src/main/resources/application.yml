@@ -6,6 +6,8 @@ spring:
           '[/**]':
             allowedOrigins:
               - '*'
+            allowedHeaders:
+              - Content-Type
             allowedMethods:
               - GET
               - POST
