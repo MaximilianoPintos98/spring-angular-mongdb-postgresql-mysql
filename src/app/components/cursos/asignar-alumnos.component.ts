@@ -1,0 +1,42 @@
+import { SelectionModel } from '@angular/cdk/collections';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Alumno } from 'src/app/models/alumno';
+import { Curso } from 'src/app/models/curso';
+import { AlumnoService } from 'src/app/services/alumno.service';
+import { CursoService } from 'src/app/services/cursos.service';
+
+@Component({
+  selector: 'app-asignar-alumnos',
+  templateUrl: './asignar-alumnos.component.html',
+  styleUrls: ['./asignar-alumnos.component.css']
+})
+export class AsignarAlumnosComponent implements OnInit {
+
+  curso!: Curso;
+  alumnosAsignar!: Alumno[];
+  mostrarColumnas: string[] = ['nombre', 'apellido', 'seleccion']
+
+  seleccion: SelectionModel<Alumno> = new SelectionModel<Alumno>(true, []);
+
+  constructor(private route: ActivatedRoute,
+    private cursoService: CursoService,
+    private alumnoService: AlumnoService
+  ) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id: number = Number(params.get('id'));
+      this.cursoService.ver(id).subscribe(c => this.curso.id)
+    });
+  }
+
+  filtrar(nombre: string): void {
+    nombre = nombre !== undefined? nombre.trim(): '';
+    
+    if (nombre !== '') {
+      this.alumnoService.filtrarPorNombre(nombre).subscribe(alumnos => this.alumnosAsignar = alumnos)
+    }
+    
+  }
+}
