@@ -14,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CursoFormComponent } from './components/cursos/curso-form.component';
 import { ExamenesFormComponent } from './components/examenes/examenes-form.component';
 import { AsignarAlumnosComponent } from './components/cursos/asignar-alumnos.component';
+import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.component';
+import { ResponderExamenComponent } from './components/alumnos/responder-examen.component';
+import { ResponderExamenModalComponent } from './components/alumnos/responder-examen-modal.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -22,6 +25,12 @@ import { MatCheckboxModule } from '@angular/material/Checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { VerExamenModalComponent } from './components/alumnos/ver-examen-modal.component';
+
+
 
 @NgModule({
   declarations: [
@@ -33,6 +42,14 @@ import { MatTabsModule } from '@angular/material/tabs';
     CursoFormComponent,
     ExamenesFormComponent,
     AsignarAlumnosComponent,
+    AsignarExamenesComponent,
+    ResponderExamenComponent,
+    ResponderExamenModalComponent,
+    VerExamenModalComponent,
+  ],
+  entryComponents: [
+    ResponderExamenModalComponent,
+    VerExamenModalComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +65,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatButtonModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatAutocompleteModule,
+    MatDialogModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
