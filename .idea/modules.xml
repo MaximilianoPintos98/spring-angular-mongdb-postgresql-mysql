@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Microservicios Backend.iml" filepath="$PROJECT_DIR$/.idea/Microservicios Backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons-alumnos/commons-alumnos.iml" filepath="$PROJECT_DIR$/commons-alumnos/commons-alumnos.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons-examenes/commons-examenes.iml" filepath="$PROJECT_DIR$/commons-examenes/commons-examenes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/commons-microservicios/commons-microservicios.iml" filepath="$PROJECT_DIR$/commons-microservicios/commons-microservicios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservicios-commons/commons-microservicios.iml" filepath="$PROJECT_DIR$/microservicios-commons/commons-microservicios.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservicios-eureka/eureka.iml" filepath="$PROJECT_DIR$/microservicios-eureka/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservicios-cursos/microservicios-cursos.iml" filepath="$PROJECT_DIR$/microservicios-cursos/microservicios-cursos.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservicios-examenes/microservicios-examenes.iml" filepath="$PROJECT_DIR$/microservicios-examenes/microservicios-examenes.iml" />

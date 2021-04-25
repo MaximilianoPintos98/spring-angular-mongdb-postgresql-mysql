@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 
-// @CrossOrigin({"*"})
+
 public class CommonsController<E, S extends CommonsService<E>> {
 
     @Autowired
